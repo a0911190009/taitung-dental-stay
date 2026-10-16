@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>台東看牙住宿推薦｜2026/11/11（三）–11/18（三）7晚</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <style>
     :root {
       --bg: #f7f9fc;
@@ -43,23 +44,27 @@
     }
 
     header {
+      position: relative;
       background: linear-gradient(135deg, #003580 0%, #0057b8 100%);
       color: #ffffff;
       padding: 28px 20px;
       border-radius: 16px;
       margin-bottom: 24px;
       box-shadow: 0 4px 14px rgba(0, 53, 128, 0.15);
+      overflow: visible;
     }
 
     header h1 {
-      margin: 0 0 12px 0;
+      margin: 0 0 14px 0;
       font-size: 1.55rem;
       line-height: 1.35;
       font-weight: 800;
       letter-spacing: 0.01em;
+      padding-right: 60px;
     }
 
     .clinic-box {
+      position: relative;
       background: rgba(255, 255, 255, 0.14);
       border: 1px solid rgba(255, 255, 255, 0.28);
       border-radius: 12px;
@@ -90,6 +95,7 @@
     }
 
     .section-title {
+      position: relative;
       font-size: 1.35rem;
       font-weight: 800;
       margin: 30px 0 14px;
@@ -100,12 +106,14 @@
     }
 
     .card {
+      position: relative;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 22px 20px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      overflow: visible;
     }
 
     .card.primary-choice {
@@ -145,6 +153,7 @@
       font-size: 1.45rem;
       font-weight: 800;
       color: #111827;
+      padding-right: 50px;
     }
 
     .distance-pill {
@@ -209,9 +218,9 @@
 
     .btn-row {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 14px;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 18px;
     }
 
     .btn-booking {
@@ -223,7 +232,7 @@
       text-decoration: none;
       font-weight: 800;
       font-size: 1.1rem;
-      padding: 14px 24px;
+      padding: 13px 22px;
       border-radius: 12px;
       width: 100%;
       text-align: center;
@@ -234,18 +243,189 @@
       background-color: var(--primary-hover);
     }
 
+    .btn-route {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.1rem;
+      padding: 12px 22px;
+      border-radius: 12px;
+      width: 100%;
+      text-align: center;
+      transition: all 0.15s ease;
+    }
+
+    .btn-route:hover {
+      background-color: var(--accent-blue-bg);
+      border-color: var(--primary-hover);
+      color: var(--primary-hover);
+    }
+
+    /* Map container styling */
+    .map-container {
+      margin-bottom: 24px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      background: #ffffff;
+    }
+
+    #map {
+      height: 350px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    /* Leaflet custom styling */
+    .leaflet-tooltip.custom-tooltip {
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+      border: 1px solid #94a3b8;
+      white-space: nowrap;
+      color: #1e293b;
+      background: #ffffff;
+    }
+
+    .leaflet-tooltip.dentist-tooltip {
+      background-color: #fef2f2;
+      border-color: #dc2626;
+      color: #991b1b;
+      font-weight: 800;
+    }
+
+    .leaflet-popup-content-wrapper {
+      border-radius: 12px;
+      padding: 4px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    }
+
+    .leaflet-popup-content {
+      margin: 10px 12px;
+      line-height: 1.5;
+      font-family: inherit;
+    }
+
+    .popup-title {
+      font-weight: 800;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+      color: #111827;
+    }
+
+    .popup-address {
+      color: #4b5563;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .popup-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #ffffff !important;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 7px 14px;
+      border-radius: 8px;
+      margin-top: 4px;
+      transition: background 0.15s ease;
+    }
+
+    .popup-btn:hover {
+      background: var(--primary-hover);
+    }
+
+    /* Stickers decorative styling */
+    .sticker {
+      position: absolute;
+      pointer-events: none;
+      user-select: none;
+      z-index: 2;
+      filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.12));
+    }
+
+    .sticker-header-balloon {
+      top: -14px;
+      right: 14px;
+      width: 72px;
+    }
+
+    .sticker-header-airplane {
+      top: 12px;
+      right: 96px;
+      width: 58px;
+      opacity: 0.95;
+    }
+
+    .sticker-clinic-tooth {
+      bottom: -12px;
+      right: 12px;
+      width: 44px;
+    }
+
+    .sticker-card-bed {
+      top: -16px;
+      right: 16px;
+      width: 82px;
+    }
+
+    .sticker-card-sugar {
+      top: -14px;
+      right: 16px;
+      width: 54px;
+    }
+
+    .sticker-card-suitcase {
+      top: -14px;
+      right: 16px;
+      width: 50px;
+    }
+
+    .sticker-card-mountain {
+      top: -16px;
+      right: 16px;
+      width: 70px;
+    }
+
+    .sticker-tips-flower {
+      top: -14px;
+      right: 16px;
+      width: 56px;
+    }
+
+    .sticker-inline {
+      display: inline-block;
+      vertical-align: middle;
+      width: 28px;
+      height: auto;
+      margin-right: 6px;
+    }
+
     .tips-box {
+      position: relative;
       background: #ffffff;
       border: 2px solid #93c5fd;
       border-radius: 16px;
-      padding: 20px;
+      padding: 22px 20px;
       margin-top: 28px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      overflow: visible;
     }
 
     .tips-box h2 {
-      margin: 0 0 12px 0;
+      margin: 0 0 14px 0;
       font-size: 1.3rem;
-      color: #1e3a8a;
+      color: #1e40af;
+      padding-right: 50px;
     }
 
     .tips-box ul {
@@ -254,8 +434,8 @@
     }
 
     .tips-box li {
-      margin-bottom: 10px;
-      font-size: 1.05rem;
+      margin-bottom: 8px;
+      font-size: 1.02rem;
     }
 
     .tips-box li:last-child {
@@ -263,21 +443,53 @@
     }
 
     footer {
-      margin-top: 32px;
       text-align: center;
+      margin-top: 36px;
       color: var(--text-muted);
       font-size: 0.95rem;
-      padding: 16px 12px;
       border-top: 1px solid var(--border);
+      padding-top: 20px;
     }
 
     @media (min-width: 600px) {
+      .container {
+        padding: 36px 20px 60px;
+      }
       header h1 {
         font-size: 1.85rem;
       }
-      .btn-booking {
+      .btn-row {
+        flex-direction: row;
+      }
+      .btn-booking,
+      .btn-route {
         width: auto;
-        min-width: 240px;
+        min-width: 180px;
+        flex: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .sticker-header-balloon {
+        width: 54px;
+        top: -10px;
+        right: 8px;
+      }
+      .sticker-header-airplane {
+        display: none;
+      }
+      .sticker-card-bed {
+        width: 62px;
+        top: -12px;
+        right: 10px;
+      }
+      .sticker-card-sugar,
+      .sticker-card-suitcase,
+      .sticker-card-mountain,
+      .sticker-tips-flower {
+        width: 44px;
+        top: -10px;
+        right: 10px;
       }
     }
   </style>
@@ -285,8 +497,11 @@
 <body>
   <div class="container">
     <header>
+      <img src="assets/stickers/balloon.png" alt="熱氣球" class="sticker sticker-header-balloon">
+      <img src="assets/stickers/airplane.png" alt="飛機" class="sticker sticker-header-airplane">
       <h1>台東看牙住宿推薦｜2026/11/11（三）–11/18（三）7晚</h1>
       <div class="clinic-box">
+        <img src="assets/stickers/tooth.png" alt="牙齒" class="sticker sticker-clinic-tooth">
         <div>
           <strong>🦷 牙醫位置：</strong>台東市更生路689巷一帶（座標 22.766940, 121.136525）
         </div>
@@ -294,11 +509,20 @@
       </div>
     </header>
 
+    <!-- 互動地圖 -->
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+
     <main>
-      <div class="section-title">⭐ 首選與備案（可步行或近距離前往）</div>
+      <div class="section-title">
+        <img src="assets/stickers/map_pin.png" alt="地圖標記" class="sticker-inline">
+        ⭐ 首選與備案（可步行或近距離前往）
+      </div>
 
       <!-- 首選：康橋大飯店 台東館 -->
       <article class="card primary-choice">
+        <img src="assets/stickers/bed_breakfast.png" alt="床與早餐" class="sticker sticker-card-bed">
         <span class="badge badge-green">首選推薦</span>
         <h2 class="hotel-name">康橋大飯店 台東館</h2>
         <div class="distance-pill">
@@ -315,11 +539,13 @@
         </ul>
         <div class="btn-row">
           <a class="btn-booking" href="https://www.booking.com/hotel/tw/kindness-hotel-taidong.zh-tw.html" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
+          <a class="btn-route" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E4%B8%AD%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5209%E5%B7%B716%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">🚶 步行路線</a>
         </div>
       </article>
 
       <!-- 備案：月光夏民宿 -->
       <article class="card backup-choice">
+        <img src="assets/stickers/sugar_apple.png" alt="釋迦" class="sticker sticker-card-sugar">
         <span class="badge badge-amber">備案推薦</span>
         <h2 class="hotel-name">月光夏民宿</h2>
         <div class="distance-pill">
@@ -339,13 +565,18 @@
         </ul>
         <div class="btn-row">
           <a class="btn-booking" href="https://www.booking.com/hotel/tw/summer-of-moonlight-homestay.zh-tw.html" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
+          <a class="btn-route" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E9%A6%AC%E4%BA%A8%E4%BA%A8%E5%A4%A7%E9%81%93625%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">🚶 步行路線</a>
         </div>
       </article>
 
-      <div class="section-title">🚕 其他（要搭計程車去看牙）</div>
+      <div class="section-title">
+        <img src="assets/stickers/suitcase.png" alt="行李箱" class="sticker-inline">
+        🚕 其他（要搭計程車去看牙）
+      </div>
 
       <!-- 其他 1：台東新東方藍 Easy Stay -->
       <article class="card">
+        <img src="assets/stickers/mountain_sea.png" alt="山海" class="sticker sticker-card-mountain">
         <span class="badge badge-gray">其他選擇（建議搭計程車看牙）</span>
         <h2 class="hotel-name">台東新東方藍 Easy Stay</h2>
         <div class="distance-pill">
@@ -359,11 +590,13 @@
         </ul>
         <div class="btn-row">
           <a class="btn-booking" href="https://www.booking.com/hotel/tw/xin-dong-fang-lan-min-su-tai-dong-shi.zh-tw.html" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
+          <a class="btn-route" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E6%AD%A3%E6%B0%A3%E8%B7%AF57%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">🚶 步行路線</a>
         </div>
       </article>
 
       <!-- 其他 2：鴻瑞輕旅2館 -->
       <article class="card">
+        <img src="assets/stickers/flower.png" alt="小花" class="sticker sticker-tips-flower">
         <span class="badge badge-gray">其他選擇（建議搭計程車看牙）</span>
         <h2 class="hotel-name">鴻瑞輕旅2館</h2>
         <div class="distance-pill">
@@ -377,6 +610,7 @@
         </ul>
         <div class="btn-row">
           <a class="btn-booking" href="https://www.booking.com/hotel/tw/hong-rui-2guan.zh-tw.html" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
+          <a class="btn-route" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E7%A6%8F%E5%BB%BA%E8%B7%AF178%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">🚶 步行路線</a>
         </div>
       </article>
 
@@ -394,8 +628,107 @@
     </main>
 
     <footer>
-      價格與空房為 2026/10/16 在 Booking.com 查詢的結果，實際以訂房時為準。
+      價格與空房為 2026/10/17 00:23（台灣時間）在 Booking.com 查詢的結果，實際以訂房時為準。
     </footer>
   </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    // Initialize Leaflet Map
+    var map = L.map('map', {
+      scrollWheelZoom: false
+    });
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Custom Icon helper
+    function createPinIcon(bgColor, borderColor, symbol) {
+      return L.divIcon({
+        className: 'custom-map-pin',
+        html: '<div style="background-color:' + bgColor + '; border: 2px solid ' + borderColor + '; width: 32px; height: 32px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,0.3);"><span style="transform: rotate(45deg); font-size: 15px; line-height: 1;">' + symbol + '</span></div>',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32],
+        tooltipAnchor: [0, -32]
+      });
+    }
+
+    var dentistIcon = createPinIcon('#ef4444', '#b91c1c', '🦷');
+    var hotelIcon = createPinIcon('#2563eb', '#1d4ed8', '🏨');
+
+    var markers = [];
+
+    // Dentist Marker
+    var dentistCoord = [22.766940279683972, 121.13652461835369];
+    var dentistMarker = L.marker(dentistCoord, { icon: dentistIcon }).addTo(map);
+    dentistMarker.bindTooltip('🦷 牙醫位置（更生路689巷）', {
+      permanent: true,
+      direction: 'top',
+      className: 'custom-tooltip dentist-tooltip'
+    });
+    dentistMarker.bindPopup(
+      '<div class="popup-title">🦷 牙醫位置</div>' +
+      '<div class="popup-address">台東市更生路689巷一帶</div>' +
+      '<a class="popup-btn" href="https://www.google.com/maps?q=22.766940279683972,121.13652461835369" target="_blank" rel="noopener noreferrer">在 Google 地圖查看</a>'
+    );
+    markers.push(dentistMarker);
+
+    // Hotel data
+    var hotelList = [
+      {
+        name: '康橋大飯店 台東館',
+        coord: [22.76795, 121.14197],
+        address: '台東市中興路一段209巷16號',
+        tooltip: '康橋大飯店 台東館（步行約 11 分）',
+        routeUrl: 'https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E4%B8%AD%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5209%E5%B7%B716%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking'
+      },
+      {
+        name: '月光夏民宿',
+        coord: [22.77501, 121.14139],
+        address: '台東市馬亨亨大道625號',
+        tooltip: '月光夏民宿（步行約 27 分）',
+        routeUrl: 'https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E9%A6%AC%E4%BA%A8%E4%BA%A8%E5%A4%A7%E9%81%93625%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking'
+      },
+      {
+        name: '台東新東方藍 Easy Stay',
+        coord: [22.75034, 121.15375],
+        address: '台東市正氣路57號',
+        tooltip: '台東新東方藍 Easy Stay（步行約 39 分）',
+        routeUrl: 'https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E6%AD%A3%E6%B0%A3%E8%B7%AF57%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking'
+      },
+      {
+        name: '鴻瑞輕旅2館',
+        coord: [22.75299, 121.15280],
+        address: '台東市福建路178號',
+        tooltip: '鴻瑞輕旅2館（步行約 36 分）',
+        routeUrl: 'https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E7%A6%8F%E5%BB%BA%E8%B7%AF178%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking'
+      }
+    ];
+
+    hotelList.forEach(function(hotel) {
+      var m = L.marker(hotel.coord, { icon: hotelIcon }).addTo(map);
+      m.bindTooltip(hotel.tooltip, {
+        permanent: true,
+        direction: 'top',
+        className: 'custom-tooltip'
+      });
+      m.bindPopup(
+        '<div class="popup-title">🏨 ' + hotel.name + '</div>' +
+        '<div class="popup-address">📍 地址：' + hotel.address + '</div>' +
+        '<a class="popup-btn" href="' + hotel.routeUrl + '" target="_blank" rel="noopener noreferrer">🚶 Google 地圖步行路線</a>'
+      );
+      markers.push(m);
+    });
+
+    // Auto fit bounds to show all markers
+    var group = L.featureGroup(markers);
+    map.fitBounds(group.getBounds(), {
+      padding: [40, 40]
+    });
+  </script>
 </body>
 </html>
