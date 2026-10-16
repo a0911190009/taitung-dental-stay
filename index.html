@@ -60,7 +60,9 @@
       line-height: 1.35;
       font-weight: 800;
       letter-spacing: 0.01em;
-      padding-right: 60px;
+      padding-right: 120px; /* 保留足夠空間避免貼圖遮擋文字 */
+      position: relative;
+      z-index: 1;
     }
 
     .clinic-box {
@@ -75,6 +77,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
+      z-index: 1;
     }
 
     .clinic-box a {
@@ -98,7 +101,7 @@
       position: relative;
       font-size: 1.35rem;
       font-weight: 800;
-      margin: 30px 0 14px;
+      margin: 32px 0 16px;
       color: #111827;
       display: flex;
       align-items: center;
@@ -141,6 +144,11 @@
     .badge-amber {
       background: var(--accent-amber-bg);
       color: var(--accent-amber);
+    }
+
+    .badge-blue {
+      background: var(--accent-blue-bg);
+      color: #1d4ed8;
     }
 
     .badge-gray {
@@ -277,16 +285,16 @@
     }
 
     #map {
-      height: 350px;
+      height: 400px;
       width: 100%;
       z-index: 1;
     }
 
     /* Leaflet custom styling */
     .leaflet-tooltip.custom-tooltip {
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      padding: 4px 8px;
+      padding: 3px 7px;
       border-radius: 6px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
       border: 1px solid #94a3b8;
@@ -356,13 +364,13 @@
     .sticker-header-balloon {
       top: -14px;
       right: 14px;
-      width: 72px;
+      width: 68px;
     }
 
     .sticker-header-airplane {
-      top: 12px;
-      right: 96px;
-      width: 58px;
+      top: 10px;
+      right: 88px;
+      width: 52px;
       opacity: 0.95;
     }
 
@@ -378,6 +386,18 @@
       width: 82px;
     }
 
+    .sticker-card-mountain {
+      top: -16px;
+      right: 16px;
+      width: 70px;
+    }
+
+    .sticker-card-flower {
+      top: -14px;
+      right: 16px;
+      width: 56px;
+    }
+
     .sticker-card-sugar {
       top: -14px;
       right: 16px;
@@ -390,12 +410,6 @@
       width: 50px;
     }
 
-    .sticker-card-mountain {
-      top: -16px;
-      right: 16px;
-      width: 70px;
-    }
-
     .sticker-tips-flower {
       top: -14px;
       right: 16px;
@@ -405,7 +419,7 @@
     .sticker-inline {
       display: inline-block;
       vertical-align: middle;
-      width: 28px;
+      width: 26px;
       height: auto;
       margin-right: 6px;
     }
@@ -442,6 +456,14 @@
       margin-bottom: 0;
     }
 
+    .tips-highlight {
+      background: #fef3c7;
+      color: #92400e;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
     footer {
       text-align: center;
       margin-top: 36px;
@@ -457,6 +479,7 @@
       }
       header h1 {
         font-size: 1.85rem;
+        padding-right: 155px; /* 桌機給予足夠間距防飛機重疊 */
       }
       .btn-row {
         flex-direction: row;
@@ -470,26 +493,41 @@
     }
 
     @media (max-width: 600px) {
+      header {
+        padding: 22px 16px;
+      }
+      header h1 {
+        font-size: 1.35rem;
+        padding-right: 95px; /* 手機預留右上角貼圖間距 */
+        line-height: 1.4;
+      }
       .sticker-header-balloon {
-        width: 54px;
-        top: -10px;
+        width: 46px;
+        top: -8px;
         right: 8px;
       }
       .sticker-header-airplane {
-        display: none;
+        width: 38px;
+        top: 8px;
+        right: 54px;
+        display: block; /* 手機端正常顯示且不遮擋文字 */
       }
       .sticker-card-bed {
         width: 62px;
         top: -12px;
         right: 10px;
       }
+      .sticker-card-mountain,
+      .sticker-card-flower,
       .sticker-card-sugar,
       .sticker-card-suitcase,
-      .sticker-card-mountain,
       .sticker-tips-flower {
         width: 44px;
         top: -10px;
         right: 10px;
+      }
+      #map {
+        height: 380px;
       }
     }
   </style>
@@ -515,15 +553,93 @@
     </div>
 
     <main>
+      <!-- 主推區塊（3 間） -->
       <div class="section-title">
-        <img src="assets/stickers/map_pin.png" alt="地圖標記" class="sticker-inline">
-        ⭐ 首選與備案（可步行或近距離前往）
+        <img src="assets/stickers/bed_breakfast.png" alt="主推" class="sticker-inline">
+        ⭐ 主推推薦（步行可達・精選好選擇）
       </div>
 
-      <!-- 首選：康橋大飯店 台東館 -->
+      <!-- 主推 1：松柏文旅 -->
       <article class="card primary-choice">
         <img src="assets/stickers/bed_breakfast.png" alt="床與早餐" class="sticker sticker-card-bed">
-        <span class="badge badge-green">首選推薦</span>
+        <span class="badge badge-green">主推推薦 1</span>
+        <h2 class="hotel-name">松柏文旅</h2>
+        <div class="distance-pill">
+          🚶 步行到牙醫：<strong>550 公尺｜約 8 分鐘</strong>（Google 地圖）
+          <a href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E6%B4%9B%E9%99%BD%E8%A1%97342%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">路線導航</a>
+        </div>
+        <ul class="info-list">
+          <li><span class="info-label">地址：</span>台東市洛陽街342號</li>
+          <li><span class="info-label">評分：</span><span class="badge badge-blue">8.5 分</span></li>
+          <li><span class="info-label">設施特色：</span>有電梯</li>
+          <li><span class="info-label">房型資訊：</span>雙床房（2 張單人床）或加大雙人床房，20㎡，有陽台</li>
+          <li><span class="info-label">7 晚總價：</span><span class="price-highlight">TWD 13,504</span>（含稅）</li>
+          <li><span class="info-label">取消政策：</span>10/28 前可免費取消
+            <div class="notice-inline">⚠️ 房況提醒：雙床房目前只剩 1 間，建議儘早確認！</div>
+          </li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn-booking" href="https://www.booking.com/hotel/tw/342-evergreen-hall.zh-tw.html?checkin=2026-11-11&checkout=2026-11-18&group_adults=2&no_rooms=1" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
+          <a class="btn-route" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E6%B4%9B%E9%99%BD%E8%A1%97342%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">🚶 步行路線</a>
+        </div>
+      </article>
+
+      <!-- 主推 2：翠安儂風旅 -->
+      <article class="card primary-choice">
+        <img src="assets/stickers/mountain_sea.png" alt="山海" class="sticker sticker-card-mountain">
+        <span class="badge badge-green">主推推薦 2</span>
+        <h2 class="hotel-name">翠安儂風旅</h2>
+        <div class="distance-pill">
+          🚶 步行到牙醫：<strong>走路約 8～9 分鐘</strong>（Google 地圖）
+          <a href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E5%9B%9B%E7%B6%AD%E8%B7%AF%E4%B8%89%E6%AE%B5152%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">路線導航</a>
+        </div>
+        <ul class="info-list">
+          <li><span class="info-label">地址：</span>台東市四維路三段152號</li>
+          <li><span class="info-label">評分：</span><span class="badge badge-blue">8.2 分</span></li>
+          <li><span class="info-label">設施特色：</span>有電梯、浴室緊急呼救設備、24 小時櫃檯</li>
+          <li><span class="info-label">房型資訊：</span>標準雙人房 25㎡，含早餐</li>
+          <li><span class="info-label">7 晚總價：</span><span class="price-highlight">TWD 13,410</span></li>
+          <li><span class="info-label">取消政策：</span>11/8 前可免費取消</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn-booking" href="https://www.booking.com/hotel/tw/hotel-de-trianon-taitung.zh-tw.html?checkin=2026-11-11&checkout=2026-11-18&group_adults=2&no_rooms=1" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
+          <a class="btn-route" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E5%9B%9B%E7%B6%AD%E8%B7%AF%E4%B8%89%E6%AE%B5152%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">🚶 步行路線</a>
+        </div>
+      </article>
+
+      <!-- 主推 3：湯園民宿 -->
+      <article class="card primary-choice">
+        <img src="assets/stickers/flower.png" alt="小花" class="sticker sticker-card-flower">
+        <span class="badge badge-green">主推推薦 3</span>
+        <h2 class="hotel-name">湯園民宿</h2>
+        <div class="distance-pill">
+          🚶 步行到牙醫：<strong>700 公尺｜約 10 分鐘</strong>（Google 地圖）
+          <a href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E4%B8%AD%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5225%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">路線導航</a>
+        </div>
+        <ul class="info-list">
+          <li><span class="info-label">地址：</span>台東市中興路一段225號</li>
+          <li><span class="info-label">評分：</span><span class="badge badge-blue">8.9 分</span></li>
+          <li><span class="info-label">設施特色：</span>有電梯，含早餐，房內有洗衣機和免治馬桶</li>
+          <li><span class="info-label">房型資訊：</span>雙人房 15㎡，有陽台</li>
+          <li><span class="info-label">7 晚總價：</span><span class="price-highlight">TWD 12,600</span></li>
+          <li><span class="info-label">取消政策：</span>11/4 前可免費取消</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn-booking" href="https://www.booking.com/hotel/tw/siang-guest-house.zh-tw.html?checkin=2026-11-11&checkout=2026-11-18&group_adults=2&no_rooms=1" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
+          <a class="btn-route" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E4%B8%AD%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5225%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">🚶 步行路線</a>
+        </div>
+      </article>
+
+      <!-- 備案區塊（2 間） -->
+      <div class="section-title">
+        <img src="assets/stickers/suitcase.png" alt="備案" class="sticker-inline">
+        📋 備案選擇
+      </div>
+
+      <!-- 備案 1：康橋大飯店 台東館 -->
+      <article class="card backup-choice">
+        <img src="assets/stickers/sugar_apple.png" alt="釋迦" class="sticker sticker-card-sugar">
+        <span class="badge badge-amber">備案推薦</span>
         <h2 class="hotel-name">康橋大飯店 台東館</h2>
         <div class="distance-pill">
           🚶 步行到牙醫：<strong>800 公尺｜約 11 分鐘</strong>（Google 地圖）
@@ -538,14 +654,14 @@
           <li><span class="info-label">取消與付款：</span>11/9 前可免費取消，入住時付款</li>
         </ul>
         <div class="btn-row">
-          <a class="btn-booking" href="https://www.booking.com/hotel/tw/kindness-hotel-taidong.zh-tw.html" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
+          <a class="btn-booking" href="https://www.booking.com/hotel/tw/kindness-hotel-taidong.zh-tw.html?checkin=2026-11-11&checkout=2026-11-18&group_adults=2&no_rooms=1" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
           <a class="btn-route" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E4%B8%AD%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5209%E5%B7%B716%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">🚶 步行路線</a>
         </div>
       </article>
 
-      <!-- 備案：月光夏民宿 -->
+      <!-- 備案 2：月光夏民宿 -->
       <article class="card backup-choice">
-        <img src="assets/stickers/sugar_apple.png" alt="釋迦" class="sticker sticker-card-sugar">
+        <img src="assets/stickers/suitcase.png" alt="旅行箱" class="sticker sticker-card-suitcase">
         <span class="badge badge-amber">備案推薦</span>
         <h2 class="hotel-name">月光夏民宿</h2>
         <div class="distance-pill">
@@ -564,60 +680,17 @@
           <li><span class="info-label">取消政策：</span>11/4 前可免費取消</li>
         </ul>
         <div class="btn-row">
-          <a class="btn-booking" href="https://www.booking.com/hotel/tw/summer-of-moonlight-homestay.zh-tw.html" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
+          <a class="btn-booking" href="https://www.booking.com/hotel/tw/summer-of-moonlight-homestay.zh-tw.html?checkin=2026-11-11&checkout=2026-11-18&group_adults=2&no_rooms=1" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
           <a class="btn-route" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E9%A6%AC%E4%BA%A8%E4%BA%A8%E5%A4%A7%E9%81%93625%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">🚶 步行路線</a>
-        </div>
-      </article>
-
-      <div class="section-title">
-        <img src="assets/stickers/suitcase.png" alt="行李箱" class="sticker-inline">
-        🚕 其他（要搭計程車去看牙）
-      </div>
-
-      <!-- 其他 1：台東新東方藍 Easy Stay -->
-      <article class="card">
-        <img src="assets/stickers/mountain_sea.png" alt="山海" class="sticker sticker-card-mountain">
-        <span class="badge badge-gray">其他選擇（建議搭計程車看牙）</span>
-        <h2 class="hotel-name">台東新東方藍 Easy Stay</h2>
-        <div class="distance-pill">
-          🚶 步行到牙醫：<strong>2.7 公里｜約 39 分鐘</strong>（Google 地圖）
-          <a href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E6%AD%A3%E6%B0%A3%E8%B7%AF57%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">路線導航</a>
-        </div>
-        <ul class="info-list">
-          <li><span class="info-label">地址：</span>台東市正氣路57號</li>
-          <li><span class="info-label">設施：</span>有電梯</li>
-          <li><span class="info-label">7 晚總價：</span><span class="price-highlight">TWD 15,469</span></li>
-        </ul>
-        <div class="btn-row">
-          <a class="btn-booking" href="https://www.booking.com/hotel/tw/xin-dong-fang-lan-min-su-tai-dong-shi.zh-tw.html" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
-          <a class="btn-route" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E6%AD%A3%E6%B0%A3%E8%B7%AF57%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">🚶 步行路線</a>
-        </div>
-      </article>
-
-      <!-- 其他 2：鴻瑞輕旅2館 -->
-      <article class="card">
-        <img src="assets/stickers/flower.png" alt="小花" class="sticker sticker-tips-flower">
-        <span class="badge badge-gray">其他選擇（建議搭計程車看牙）</span>
-        <h2 class="hotel-name">鴻瑞輕旅2館</h2>
-        <div class="distance-pill">
-          🚶 步行到牙醫：<strong>2.5 公里｜約 36 分鐘</strong>（Google 地圖）
-          <a href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E7%A6%8F%E5%BB%BA%E8%B7%AF178%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">路線導航</a>
-        </div>
-        <ul class="info-list">
-          <li><span class="info-label">地址：</span>台東市福建路178號</li>
-          <li><span class="info-label">設施與餐點：</span>有電梯，含早餐</li>
-          <li><span class="info-label">7 晚總價：</span><span class="price-highlight">TWD 14,680</span></li>
-        </ul>
-        <div class="btn-row">
-          <a class="btn-booking" href="https://www.booking.com/hotel/tw/hong-rui-2guan.zh-tw.html" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
-          <a class="btn-route" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E7%A6%8F%E5%BB%BA%E8%B7%AF178%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">🚶 步行路線</a>
         </div>
       </article>
 
       <!-- 訂房提醒 -->
       <section class="tips-box">
+        <img src="assets/stickers/flower.png" alt="花朵" class="sticker sticker-tips-flower">
         <h2>💡 訂房提醒</h2>
         <ul>
+          <li><strong class="tips-highlight">確認對外窗：</strong>房間有沒有窗戶，訂房前請先打電話向業者確認。</li>
           <li><strong>早點預訂：</strong>空房隨時會被訂走，要早點訂。</li>
           <li><strong>詢問長住優惠：</strong>可以打電話問長住優惠。</li>
           <li><strong>彈性取消：</strong>選可以免費取消的方案。</li>
@@ -628,7 +701,7 @@
     </main>
 
     <footer>
-      價格與空房為 2026/10/17 00:35（台灣時間）在 Booking.com 查詢的結果，實際以訂房時為準。
+      價格與空房為 2026/10/17 查詢 Booking.com 的結果，實際以訂房時為準。
     </footer>
   </div>
 
@@ -667,7 +740,8 @@
     var dentistMarker = L.marker(dentistCoord, { icon: dentistIcon }).addTo(map);
     dentistMarker.bindTooltip('🦷 牙醫位置（更生路689巷）', {
       permanent: true,
-      direction: 'top',
+      direction: 'bottom',
+      offset: [0, 10],
       className: 'custom-tooltip dentist-tooltip'
     });
     dentistMarker.bindPopup(
@@ -677,13 +751,49 @@
     );
     markers.push(dentistMarker);
 
-    // Hotel data
+    // 5 Hotels data (3 Primary + 2 Backup)
+    // Non-overlapping directions:
+    // - Dentist: bottom
+    // - 湯園: top
+    // - 康橋: right
+    // - 月光夏: right
+    // - 翠安儂: right
+    // - 松柏: bottom
     var hotelList = [
+      {
+        name: '松柏文旅',
+        coord: [22.76356, 121.13937],
+        address: '台東市洛陽街342號',
+        tooltip: '松柏文旅（步行約 8 分）',
+        direction: 'bottom',
+        offset: [0, 10],
+        routeUrl: 'https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E6%B4%9B%E9%99%BD%E8%A1%97342%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking'
+      },
+      {
+        name: '翠安儂風旅',
+        coord: [22.76596, 121.14080],
+        address: '台東市四維路三段152號',
+        tooltip: '翠安儂風旅（步行約 8～9 分）',
+        direction: 'right',
+        offset: [12, 0],
+        routeUrl: 'https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E5%9B%9B%E7%B6%AD%E8%B7%AF%E4%B8%89%E6%AE%B5152%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking'
+      },
+      {
+        name: '湯園民宿',
+        coord: [22.76790, 121.14149],
+        address: '台東市中興路一段225號',
+        tooltip: '湯園民宿（步行約 10 分）',
+        direction: 'top',
+        offset: [0, -10],
+        routeUrl: 'https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E4%B8%AD%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5225%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking'
+      },
       {
         name: '康橋大飯店 台東館',
         coord: [22.76795, 121.14197],
         address: '台東市中興路一段209巷16號',
         tooltip: '康橋大飯店 台東館（步行約 11 分）',
+        direction: 'right',
+        offset: [12, 0],
         routeUrl: 'https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E4%B8%AD%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5209%E5%B7%B716%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking'
       },
       {
@@ -691,21 +801,9 @@
         coord: [22.77501, 121.14139],
         address: '台東市馬亨亨大道625號',
         tooltip: '月光夏民宿（步行約 27 分）',
+        direction: 'right',
+        offset: [12, 0],
         routeUrl: 'https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E9%A6%AC%E4%BA%A8%E4%BA%A8%E5%A4%A7%E9%81%93625%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking'
-      },
-      {
-        name: '台東新東方藍 Easy Stay',
-        coord: [22.75034, 121.15375],
-        address: '台東市正氣路57號',
-        tooltip: '台東新東方藍 Easy Stay（步行約 39 分）',
-        routeUrl: 'https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E6%AD%A3%E6%B0%A3%E8%B7%AF57%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking'
-      },
-      {
-        name: '鴻瑞輕旅2館',
-        coord: [22.75299, 121.15280],
-        address: '台東市福建路178號',
-        tooltip: '鴻瑞輕旅2館（步行約 36 分）',
-        routeUrl: 'https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E7%A6%8F%E5%BB%BA%E8%B7%AF178%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking'
       }
     ];
 
@@ -713,7 +811,8 @@
       var m = L.marker(hotel.coord, { icon: hotelIcon }).addTo(map);
       m.bindTooltip(hotel.tooltip, {
         permanent: true,
-        direction: 'top',
+        direction: hotel.direction,
+        offset: hotel.offset,
         className: 'custom-tooltip'
       });
       m.bindPopup(
@@ -724,10 +823,10 @@
       markers.push(m);
     });
 
-    // Auto fit bounds to show all markers
+    // Auto fit bounds to show all markers with comfortable padding
     var group = L.featureGroup(markers);
     map.fitBounds(group.getBounds(), {
-      padding: [40, 40]
+      padding: [50, 45]
     });
   </script>
 </body>
