@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>台東看牙住宿推薦｜2026/11/11（三）–11/18（三）7晚</title>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card-bg: #ffffff;
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --primary: #003580;
+      --primary-hover: #00224f;
+      --accent-green: #059669;
+      --accent-green-bg: #ecfdf5;
+      --accent-amber: #d97706;
+      --accent-amber-bg: #fffbeb;
+      --accent-blue: #2563eb;
+      --accent-blue-bg: #eff6ff;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-size: 18px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #003580 0%, #0057b8 100%);
+      color: #ffffff;
+      padding: 28px 20px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 14px rgba(0, 53, 128, 0.15);
+    }
+
+    header h1 {
+      margin: 0 0 12px 0;
+      font-size: 1.55rem;
+      line-height: 1.35;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .clinic-box {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 1.05rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .clinic-box a {
+      display: inline-block;
+      background: #ffffff;
+      color: #003580;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .clinic-box a:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin: 30px 0 14px;
+      color: #111827;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .card.primary-choice {
+      border: 2px solid var(--accent-green);
+    }
+
+    .card.backup-choice {
+      border: 2px solid var(--accent-amber);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.95rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .badge-green {
+      background: var(--accent-green-bg);
+      color: var(--accent-green);
+    }
+
+    .badge-amber {
+      background: var(--accent-amber-bg);
+      color: var(--accent-amber);
+    }
+
+    .badge-gray {
+      background: #f3f4f6;
+      color: #374151;
+    }
+
+    .hotel-name {
+      margin: 0 0 10px 0;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .distance-pill {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      background: var(--accent-blue-bg);
+      color: #1e40af;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 8px 14px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #bfdbfe;
+    }
+
+    .distance-pill a {
+      color: #1d4ed8;
+      text-decoration: underline;
+      font-size: 0.95rem;
+      margin-left: 4px;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+    }
+
+    .info-list li {
+      padding: 7px 0;
+      border-bottom: 1px dashed #e5e7eb;
+      font-size: 1.05rem;
+    }
+
+    .info-list li:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      font-weight: 700;
+      color: #374151;
+    }
+
+    .price-highlight {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #b91c1c;
+    }
+
+    .notice-inline {
+      background: #fffbeb;
+      color: #92400e;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border-left: 4px solid #f59e0b;
+      margin-top: 6px;
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .btn-booking {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.1rem;
+      padding: 14px 24px;
+      border-radius: 12px;
+      width: 100%;
+      text-align: center;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn-booking:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .tips-box {
+      background: #ffffff;
+      border: 2px solid #93c5fd;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 28px;
+    }
+
+    .tips-box h2 {
+      margin: 0 0 12px 0;
+      font-size: 1.3rem;
+      color: #1e3a8a;
+    }
+
+    .tips-box ul {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .tips-box li {
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .tips-box li:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      margin-top: 32px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      padding: 16px 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (min-width: 600px) {
+      header h1 {
+        font-size: 1.85rem;
+      }
+      .btn-booking {
+        width: auto;
+        min-width: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>台東看牙住宿推薦｜2026/11/11（三）–11/18（三）7晚</h1>
+      <div class="clinic-box">
+        <div>
+          <strong>🦷 牙醫位置：</strong>台東市更生路689巷一帶（座標 22.766940, 121.136525）
+        </div>
+        <a href="https://www.google.com/maps?q=22.766940279683972,121.13652461835369" target="_blank" rel="noopener noreferrer">📍 在 Google 地圖查看牙醫位置</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="section-title">⭐ 首選與備案（可步行或近距離前往）</div>
+
+      <!-- 首選：康橋大飯店 台東館 -->
+      <article class="card primary-choice">
+        <span class="badge badge-green">首選推薦</span>
+        <h2 class="hotel-name">康橋大飯店 台東館</h2>
+        <div class="distance-pill">
+          🚶 步行到牙醫：<strong>800 公尺｜約 11 分鐘</strong>（Google 地圖）
+          <a href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E4%B8%AD%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5209%E5%B7%B716%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">路線導航</a>
+        </div>
+        <ul class="info-list">
+          <li><span class="info-label">地址：</span>台東市中興路一段209巷16號</li>
+          <li><span class="info-label">電話：</span><a href="tel:089-229226">089-229226</a></li>
+          <li><span class="info-label">設施與餐點：</span>有電梯，含早餐</li>
+          <li><span class="info-label">房型資訊：</span>舒適四人間（2 張雙人床，26㎡，城市景觀）</li>
+          <li><span class="info-label">7 晚總價：</span><span class="price-highlight">TWD 38,790</span></li>
+          <li><span class="info-label">取消與付款：</span>11/9 前可免費取消，入住時付款</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn-booking" href="https://www.booking.com/hotel/tw/kindness-hotel-taidong.zh-tw.html" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
+        </div>
+      </article>
+
+      <!-- 備案：月光夏民宿 -->
+      <article class="card backup-choice">
+        <span class="badge badge-amber">備案推薦</span>
+        <h2 class="hotel-name">月光夏民宿</h2>
+        <div class="distance-pill">
+          🚶 步行到牙醫：<strong>1.9 公里｜約 27 分鐘</strong>（Google 地圖）
+          <a href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E9%A6%AC%E4%BA%A8%E4%BA%A8%E5%A4%A7%E9%81%93625%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">路線導航</a>
+        </div>
+        <ul class="info-list">
+          <li><span class="info-label">地址：</span>台東市馬亨亨大道625號</li>
+          <li><span class="info-label">電話：</span><a href="tel:089-219168">089-219168</a></li>
+          <li><span class="info-label">設施與服務：</span>沒有電梯，但房間在一樓，有陽台，有車站和機場接送</li>
+          <li><span class="info-label">房型資訊：</span>雙人房 23㎡</li>
+          <li>
+            <span class="info-label">7 晚總價：</span><span class="price-highlight">TWD 25,945</span>（含早餐方案 <strong>TWD 27,310</strong>）
+            <div class="notice-inline">⚠️ 頁面有寫 10% 服務費，請先跟民宿確認是否已含在總價</div>
+          </li>
+          <li><span class="info-label">取消政策：</span>11/4 前可免費取消</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn-booking" href="https://www.booking.com/hotel/tw/summer-of-moonlight-homestay.zh-tw.html" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
+        </div>
+      </article>
+
+      <div class="section-title">🚕 其他（要搭計程車去看牙）</div>
+
+      <!-- 其他 1：台東新東方藍 Easy Stay -->
+      <article class="card">
+        <span class="badge badge-gray">其他選擇（建議搭計程車看牙）</span>
+        <h2 class="hotel-name">台東新東方藍 Easy Stay</h2>
+        <div class="distance-pill">
+          🚶 步行到牙醫：<strong>2.7 公里｜約 39 分鐘</strong>（Google 地圖）
+          <a href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E6%AD%A3%E6%B0%A3%E8%B7%AF57%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">路線導航</a>
+        </div>
+        <ul class="info-list">
+          <li><span class="info-label">地址：</span>台東市正氣路57號</li>
+          <li><span class="info-label">設施：</span>有電梯</li>
+          <li><span class="info-label">7 晚總價：</span><span class="price-highlight">TWD 15,469</span></li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn-booking" href="https://www.booking.com/hotel/tw/xin-dong-fang-lan-min-su-tai-dong-shi.zh-tw.html" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
+        </div>
+      </article>
+
+      <!-- 其他 2：鴻瑞輕旅2館 -->
+      <article class="card">
+        <span class="badge badge-gray">其他選擇（建議搭計程車看牙）</span>
+        <h2 class="hotel-name">鴻瑞輕旅2館</h2>
+        <div class="distance-pill">
+          🚶 步行到牙醫：<strong>2.5 公里｜約 36 分鐘</strong>（Google 地圖）
+          <a href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E7%A6%8F%E5%BB%BA%E8%B7%AF178%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">路線導航</a>
+        </div>
+        <ul class="info-list">
+          <li><span class="info-label">地址：</span>台東市福建路178號</li>
+          <li><span class="info-label">設施與餐點：</span>有電梯，含早餐</li>
+          <li><span class="info-label">7 晚總價：</span><span class="price-highlight">TWD 14,680</span></li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn-booking" href="https://www.booking.com/hotel/tw/hong-rui-2guan.zh-tw.html" target="_blank" rel="noopener noreferrer">Booking 訂房頁</a>
+        </div>
+      </article>
+
+      <!-- 訂房提醒 -->
+      <section class="tips-box">
+        <h2>💡 訂房提醒</h2>
+        <ul>
+          <li><strong>早點預訂：</strong>空房隨時會被訂走，要早點訂。</li>
+          <li><strong>詢問長住優惠：</strong>可以打電話問長住優惠。</li>
+          <li><strong>彈性取消：</strong>選可以免費取消的方案。</li>
+          <li><strong>提早入住：</strong>問能不能提早入住（從瑞士回來有時差）。</li>
+          <li><strong>房間冰箱：</strong>房間最好有冰箱，看完牙可以冰敷。</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      價格與空房為 2026/10/16 在 Booking.com 查詢的結果，實際以訂房時為準。
+    </footer>
+  </div>
+</body>
+</html>
