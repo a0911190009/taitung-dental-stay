@@ -3,146 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>台東看牙住宿推薦｜雜誌風語音翻頁專刊</title>
+  <title>台東看牙住宿推薦｜Vogue & Kinfolk 風格雙頁雜誌專刊</title>
   <meta name="robots" content="noindex,nofollow">
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="css/style.css?v=20261017_1200">
+  <link rel="stylesheet" href="css/style.css?v=20261017_1415">
 </head>
 <body>
 
-  <!-- PC Side Navigation Arrows -->
+  <!-- Desktop Side Navigation Arrows -->
   <button id="pcLeft" class="pc-nav-arrow pc-nav-left" aria-label="上一頁">‹</button>
   <button id="pcRight" class="pc-nav-arrow pc-nav-right" aria-label="下一頁">›</button>
 
   <div id="app">
-    <!-- Topbar Navigation & Audio Controls -->
+    <!-- Topbar Masthead & Audio Controls -->
     <header class="topbar">
       <div class="topbar-brand">
         <span class="mag-logo">TAITUNG STAY</span>
-        <span id="pageNo" class="page-indicator">01 / 09</span>
+        <span class="mag-issue">慢旅台東・專題特輯</span>
+        <span id="pageNo" class="page-indicator">01 / 10</span>
       </div>
       <div class="topbar-controls">
-        <button id="btnPause" class="control-btn" aria-label="暫停或繼續" title="暫停 / 播放">⏸</button>
+        <span id="audioStatus" class="audio-status-pill">語音導覽準備中</span>
+        <button id="btnPause" class="control-btn" aria-label="播放或暫停" title="播放 / 暫停">▶</button>
         <button id="btnReplay" class="control-btn" aria-label="重聽本頁" title="重聽本頁">🔁</button>
         <button id="btnMute" class="control-btn" aria-label="靜音切換" title="靜音切換">🔊</button>
       </div>
     </header>
 
-    <!-- Slide Stage -->
+    <!-- Book / Magazine Stage -->
     <main id="stage" class="stage">
+      <!-- Central Book Spine for Desktop 2-Page Spread -->
+      <div class="book-spine" aria-hidden="true"></div>
 
       <!-- ==========================================
-           SLIDE 1: COVER
+           PAGE 01: COVER (封面 - 台東山海)
            ========================================== -->
       <section class="slide active" data-page="1">
-        <div class="inner cover-hero">
-          <div class="cover-badge">專題特輯・2026秋季號</div>
-          <h1 class="cover-title">台東看牙<br>住宿推薦</h1>
-          <div class="cover-dates">2026/11/11（三）– 11/18（三）7晚</div>
-
-          <div class="cover-intro-box">
-            為您細心精選兼具<strong>清幽休養、電梯平穩出入</strong>，且步行即可輕鬆往返牙醫診所的高品質旅宿。
+        <div class="inner">
+          <div class="page-masthead">
+            <span>VOL. 2026 AUTUMN · ISSUE NO. 08</span>
+            <span class="folio-num">P. 01</span>
           </div>
 
-          <div style="position: relative; width: 100%;">
-            <span class="finger-hint" style="left: -12px; top: 12px;">👉</span>
-            <button id="btnStart" class="cover-btn-start">
-              <span>👉 點我開始聆聽</span>
-            </button>
+          <div class="hero-photo-frame cover-photo-frame">
+            <img src="img/taitung_mountain_sea.webp" alt="台東海岸山脈與太平洋晨曦" class="editorial-img">
+            <div class="cover-overlay-badge">VOGUE &amp; KINFOLK EDITORIAL EDITION</div>
           </div>
 
-          <div class="volume-notice">
-            <span>🔊 請打開手機音量（iPhone 請關閉靜音開關）</span>
+          <div class="cover-editorial-body">
+            <div class="cover-kicker">2026/11/11（三）– 11/18（三）共 7 晚</div>
+            <h1 class="cover-main-title">台東看牙・住宿推薦專刊</h1>
+            <p class="editorial-lead">
+              依山傍海的靜謐居所。為您嚴選<strong>配備電梯、平穩出入、步行 8–10 分鐘直達牙醫診所</strong>的高質感旅宿，讓看牙與休養都成為優雅從容的慢活時光。
+            </p>
           </div>
 
-          <div class="turn-hint-text">
-            <span>輕點右下角折角翻頁，或左右滑動閱覽</span>
+          <div class="cover-actions">
+            <div class="btn-wrap-relative">
+              <span class="finger-hint active" style="left: 14px; top: -18px;">👉</span>
+              <button id="btnStart" class="cover-btn-start">
+                <span>👉 點我開始聆聽</span>
+              </button>
+            </div>
+            <div class="volume-notice">
+              <span>🔊 請打開手機音量（iPhone 請關閉靜音）</span>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- ==========================================
-           SLIDE 2: CLINIC LOCATION
+           PAGE 02: CLINIC LOCATION (牙醫位置 - 台東縱谷稻田)
            ========================================== -->
       <section class="slide" data-page="2">
         <div class="inner">
-          <div class="mag-category">LOCATION & ACCESS</div>
-          <h2 class="mag-title">牙醫診所地理位置</h2>
-          <div class="mag-subtitle">台東市更生路689巷一帶・靜謐生活圈</div>
+          <div class="page-masthead">
+            <span>TAITUNG STAY · LOCATION &amp; ACCESS</span>
+            <span class="folio-num">P. 02</span>
+          </div>
 
-          <div class="mag-card">
-            <div class="info-row">
-              <span class="info-tag">診所核心</span>
-              <span class="info-val">台東市更生路689巷一帶</span>
+          <div class="hero-photo-frame">
+            <img src="img/taitung_rice_paddies.webp" alt="台東縱谷翠綠稻田與山嵐" class="editorial-img">
+            <span class="photo-tag-badge">📍 診所核心生活圈</span>
+          </div>
+
+          <div class="editorial-header">
+            <div class="mag-kicker">DENTAL CLINIC &amp; NEIGHBORHOOD</div>
+            <h2 class="mag-serif-title">牙醫診所地理位置</h2>
+            <div class="mag-serif-sub">台東市更生路689巷一帶（座標 22.766940, 121.136525）</div>
+          </div>
+
+          <div class="editorial-columns">
+            <div class="col-item">
+              <span class="col-label">核心地段</span>
+              <span class="col-value">台東市更生路689巷靜巷，日常採買與餐飲便利，夜間清幽不吵雜。</span>
             </div>
-            <div class="info-row">
-              <span class="info-tag">周邊環境</span>
-              <span class="info-val">生活機能完善・夜間清幽安靜</span>
-            </div>
-            <div class="info-row">
-              <span class="info-tag">推薦標準</span>
-              <span class="info-val">步行即可輕鬆達・回診無負擔</span>
+            <div class="col-item">
+              <span class="col-label">推薦基準</span>
+              <span class="col-value"><strong>3 間主推旅宿</strong>散步 <strong>8～10 分鐘</strong>即可抵達；另備 <strong>2 間安心備案</strong>供彈性選擇。</span>
             </div>
           </div>
 
-          <div class="map-visual-box">
-            <div class="map-visual-pin">📍</div>
-            <div style="font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 4px;">診所位置坐標中心</div>
-            <div style="font-size: 16px; color: var(--text-muted);">本特輯住宿皆圍繞診所步行 8～10 分鐘範圍</div>
-          </div>
-
-          <div class="action-row" style="position: relative;">
-            <span class="finger-hint" style="left: -14px; top: 10px;">👉</span>
+          <div class="action-row single-action">
+            <span class="finger-hint" style="left: 10px; top: -18px;">👉</span>
             <a class="btn-mag btn-primary-mag btn-full" href="https://www.google.com/maps?q=22.766940279683972,121.13652461835369" target="_blank" rel="noopener noreferrer">
-              🗺️ 開啟 Google 地圖導航
+              📍 在 Google 地圖查看牙醫位置
             </a>
           </div>
         </div>
       </section>
 
       <!-- ==========================================
-           SLIDE 3: EVERGREEN HALL (松柏文旅)
+           PAGE 03: 松柏文旅 (EVERGREEN HALL)
            ========================================== -->
       <section class="slide" data-page="3">
         <div class="inner">
-          <div class="mag-category">PRIMARY RECOMMENDATION 01</div>
-          <h2 class="mag-title">松柏文旅</h2>
-          <div class="mag-subtitle">步行到牙醫 550 公尺｜散步約 8 分鐘</div>
-
-          <div class="tags-row">
-            <span class="tag-pill">⭐ 主推首選</span>
-            <span class="tag-pill">🛗 大樓有電梯</span>
-            <span class="tag-pill">🌿 獨立陽台</span>
-            <span class="tag-pill warning">⚠️ 雙床房剩最後 1 間</span>
+          <div class="page-masthead">
+            <span>PRIMARY SELECTION 01 · 主推首選</span>
+            <span class="folio-num">P. 03</span>
           </div>
 
-          <div class="mag-card">
-            <div class="info-row">
-              <span class="info-tag">地址</span>
-              <span class="info-val">台東市洛陽街342號</span>
+          <!-- 3 Real Hotel Photos Grid -->
+          <div class="hotel-photo-grid">
+            <div class="photo-cell photo-main">
+              <img src="img/hotels/evergreen/room.webp" alt="松柏文旅推薦房型" class="editorial-img">
+              <span class="photo-role-tag">推薦房型</span>
+              <span class="photo-credit">照片來源：Booking.com／業者</span>
             </div>
-            <div class="info-row">
-              <span class="info-tag">旅客評分</span>
-              <span class="info-val">8.5 分（Booking 高評）</span>
+            <div class="photo-cell photo-sub1">
+              <img src="img/hotels/evergreen/exterior.webp" alt="松柏文旅外觀" class="editorial-img">
+              <span class="photo-role-tag">建築外觀</span>
+              <span class="photo-credit">照片來源：Booking.com／業者</span>
             </div>
-            <div class="info-row">
-              <span class="info-tag">房型規劃</span>
-              <span class="info-val">雙床房（2張單人床）/ 加大雙人床 20㎡</span>
-            </div>
-            <div class="info-row">
-              <span class="info-tag">7 晚總價</span>
-              <span class="info-val price-val">TWD 13,504</span>
-            </div>
-            <div class="info-row">
-              <span class="info-tag">取消政策</span>
-              <span class="info-val" style="color: #047857; font-weight: 700;">10/28 前免費取消</span>
+            <div class="photo-cell photo-sub2">
+              <img src="img/hotels/evergreen/bathroom.webp" alt="松柏文旅浴室" class="editorial-img">
+              <span class="photo-role-tag">乾濕分離衛浴</span>
+              <span class="photo-credit">照片來源：Booking.com／業者</span>
             </div>
           </div>
 
-          <div class="action-row" style="position: relative;">
-            <span class="finger-hint" style="left: -14px; top: 8px;">👉</span>
+          <div class="hotel-title-bar">
+            <div>
+              <h2 class="mag-serif-title">松柏文旅</h2>
+              <div class="hotel-distance">🚶 步行到牙醫：<strong>550 公尺｜約 8 分鐘</strong></div>
+            </div>
+            <div class="hotel-price-box">
+              <span class="price-caption">7 晚含稅總價</span>
+              <span class="price-amount">TWD 13,504</span>
+            </div>
+          </div>
+
+          <div class="hotel-editorial-table">
+            <div class="he-row">
+              <span class="he-label">地址與評分</span>
+              <span class="he-val">台東市洛陽街342號 ｜ <strong>8.5 分</strong> 高評</span>
+            </div>
+            <div class="he-row">
+              <span class="he-label">設施與房型</span>
+              <span class="he-val"><strong>🛗 有電梯</strong>｜雙床房（2張單人床）或加大雙人床，20㎡ 附陽台</span>
+            </div>
+            <div class="he-row">
+              <span class="he-label">取消與提醒</span>
+              <span class="he-val"><strong class="text-green">10/28 前免費取消</strong>｜<span class="text-warn">⚠️ 雙床房僅剩 1 間，建議儘早確認</span></span>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <span class="finger-hint" style="left: 10px; top: -18px;">👉</span>
             <a class="btn-mag btn-primary-mag" href="https://www.booking.com/hotel/tw/342-evergreen-hall.zh-tw.html?checkin=2026-11-11&checkout=2026-11-18&group_adults=2&no_rooms=1" target="_blank" rel="noopener noreferrer">
-              🏨 Booking 訂房
+              Booking 訂房頁
             </a>
             <a class="btn-mag btn-outline-mag" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E6%B4%9B%E9%99%BD%E8%A1%97342%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">
               🚶 步行路線
@@ -152,49 +181,63 @@
       </section>
 
       <!-- ==========================================
-           SLIDE 4: HOTEL DE TRIANON (翠安儂風旅)
+           PAGE 04: 翠安儂風旅 (HOTEL DE TRIANON)
            ========================================== -->
       <section class="slide" data-page="4">
         <div class="inner">
-          <div class="mag-category">PRIMARY RECOMMENDATION 02</div>
-          <h2 class="mag-title">翠安儂風旅</h2>
-          <div class="mag-subtitle">步行到牙醫約 8～9 分鐘｜法式優雅風情</div>
-
-          <div class="tags-row">
-            <span class="tag-pill">⭐ 主推精選</span>
-            <span class="tag-pill">🛗 有電梯</span>
-            <span class="tag-pill">🛎️ 24H 櫃檯</span>
-            <span class="tag-pill">🚨 浴室緊急拉繩</span>
-            <span class="tag-pill">🥐 附美味早餐</span>
+          <div class="page-masthead">
+            <span>PRIMARY SELECTION 02 · 主推推薦</span>
+            <span class="folio-num">P. 04</span>
           </div>
 
-          <div class="mag-card">
-            <div class="info-row">
-              <span class="info-tag">地址</span>
-              <span class="info-val">台東市四維路三段152號</span>
+          <div class="hotel-photo-grid">
+            <div class="photo-cell photo-main">
+              <img src="img/hotels/trianon/room.webp" alt="翠安儂風旅標準雙人房" class="editorial-img">
+              <span class="photo-role-tag">標準雙人房 25㎡</span>
+              <span class="photo-credit">照片來源：Booking.com／業者</span>
             </div>
-            <div class="info-row">
-              <span class="info-tag">旅客評分</span>
-              <span class="info-val">8.2 分</span>
+            <div class="photo-cell photo-sub1">
+              <img src="img/hotels/trianon/exterior.webp" alt="翠安儂風旅建築外觀" class="editorial-img">
+              <span class="photo-role-tag">建築外觀</span>
+              <span class="photo-credit">照片來源：Booking.com／業者</span>
             </div>
-            <div class="info-row">
-              <span class="info-tag">推薦房型</span>
-              <span class="info-val">標準雙人房 25㎡（寬敞明亮）</span>
-            </div>
-            <div class="info-row">
-              <span class="info-tag">7 晚總價</span>
-              <span class="info-val price-val">TWD 13,410</span>
-            </div>
-            <div class="info-row">
-              <span class="info-tag">取消政策</span>
-              <span class="info-val" style="color: #047857; font-weight: 700;">11/8 前免費取消</span>
+            <div class="photo-cell photo-sub2">
+              <img src="img/hotels/trianon/bathroom.webp" alt="翠安儂風旅浴室" class="editorial-img">
+              <span class="photo-role-tag">衛浴空間</span>
+              <span class="photo-credit">照片來源：Booking.com／業者</span>
             </div>
           </div>
 
-          <div class="action-row" style="position: relative;">
-            <span class="finger-hint" style="left: -14px; top: 8px;">👉</span>
+          <div class="hotel-title-bar">
+            <div>
+              <h2 class="mag-serif-title">翠安儂風旅</h2>
+              <div class="hotel-distance">🚶 步行到牙醫：<strong>走路約 8～9 分鐘</strong></div>
+            </div>
+            <div class="hotel-price-box">
+              <span class="price-caption">7 晚總價（含早餐）</span>
+              <span class="price-amount">TWD 13,410</span>
+            </div>
+          </div>
+
+          <div class="hotel-editorial-table">
+            <div class="he-row">
+              <span class="he-label">地址與評分</span>
+              <span class="he-val">台東市四維路三段152號 ｜ <strong>8.2 分</strong> 法式優雅旅宿</span>
+            </div>
+            <div class="he-row">
+              <span class="he-label">安心設施</span>
+              <span class="he-val"><strong>🛗 有電梯</strong>、<strong>浴室緊急呼救設備</strong>、24 小時櫃檯服務</span>
+            </div>
+            <div class="he-row">
+              <span class="he-label">房型與取消</span>
+              <span class="he-val">標準雙人房 25㎡（含早餐）｜<strong class="text-green">11/8 前可免費取消</strong></span>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <span class="finger-hint" style="left: 10px; top: -18px;">👉</span>
             <a class="btn-mag btn-primary-mag" href="https://www.booking.com/hotel/tw/hotel-de-trianon-taitung.zh-tw.html?checkin=2026-11-11&checkout=2026-11-18&group_adults=2&no_rooms=1" target="_blank" rel="noopener noreferrer">
-              🏨 Booking 訂房
+              Booking 訂房頁
             </a>
             <a class="btn-mag btn-outline-mag" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E5%9B%9B%E7%B6%AD%E8%B7%AF%E4%B8%89%E6%AE%B5152%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">
               🚶 步行路線
@@ -204,49 +247,63 @@
       </section>
 
       <!-- ==========================================
-           SLIDE 5: SIANG GUEST HOUSE (湯園民宿)
+           PAGE 05: 湯園民宿 (SIANG GUEST HOUSE)
            ========================================== -->
       <section class="slide" data-page="5">
         <div class="inner">
-          <div class="mag-category">PRIMARY RECOMMENDATION 03</div>
-          <h2 class="mag-title">湯園民宿</h2>
-          <div class="mag-subtitle">步行到牙醫 700 公尺｜散步約 10 分鐘</div>
-
-          <div class="tags-row">
-            <span class="tag-pill">⭐ 8.9分超高評</span>
-            <span class="tag-pill">🛗 有電梯</span>
-            <span class="tag-pill">🧺 房內洗衣機</span>
-            <span class="tag-pill">🚽 免治馬桶</span>
-            <span class="tag-pill">🍳 每日早餐</span>
+          <div class="page-masthead">
+            <span>PRIMARY SELECTION 03 · 主推推薦</span>
+            <span class="folio-num">P. 05</span>
           </div>
 
-          <div class="mag-card">
-            <div class="info-row">
-              <span class="info-tag">地址</span>
-              <span class="info-val">台東市中興路一段225號</span>
+          <div class="hotel-photo-grid">
+            <div class="photo-cell photo-main">
+              <img src="img/hotels/siang/room.webp" alt="湯園民宿推薦雙人房" class="editorial-img">
+              <span class="photo-role-tag">雙人房附陽台</span>
+              <span class="photo-credit">照片來源：Booking.com／業者</span>
             </div>
-            <div class="info-row">
-              <span class="info-tag">長住特點</span>
-              <span class="info-val">房內專屬洗衣機・生活極便利</span>
+            <div class="photo-cell photo-sub1">
+              <img src="img/hotels/siang/exterior.webp" alt="湯園民宿建築外觀" class="editorial-img">
+              <span class="photo-role-tag">建築外觀</span>
+              <span class="photo-credit">照片來源：Booking.com／業者</span>
             </div>
-            <div class="info-row">
-              <span class="info-tag">房型規劃</span>
-              <span class="info-val">雙人房 15㎡（附獨立陽台）</span>
-            </div>
-            <div class="info-row">
-              <span class="info-tag">7 晚總價</span>
-              <span class="info-val price-val">TWD 12,600</span>
-            </div>
-            <div class="info-row">
-              <span class="info-tag">取消政策</span>
-              <span class="info-val" style="color: #047857; font-weight: 700;">11/4 前免費取消</span>
+            <div class="photo-cell photo-sub2">
+              <img src="img/hotels/siang/bathroom.webp" alt="湯園民宿浴室" class="editorial-img">
+              <span class="photo-role-tag">衛浴空間</span>
+              <span class="photo-credit">照片來源：Booking.com／業者</span>
             </div>
           </div>
 
-          <div class="action-row" style="position: relative;">
-            <span class="finger-hint" style="left: -14px; top: 8px;">👉</span>
+          <div class="hotel-title-bar">
+            <div>
+              <h2 class="mag-serif-title">湯園民宿</h2>
+              <div class="hotel-distance">🚶 步行到牙醫：<strong>700 公尺｜約 10 分鐘</strong></div>
+            </div>
+            <div class="hotel-price-box">
+              <span class="price-caption">7 晚總價（含早餐）</span>
+              <span class="price-amount">TWD 12,600</span>
+            </div>
+          </div>
+
+          <div class="hotel-editorial-table">
+            <div class="he-row">
+              <span class="he-label">地址與評分</span>
+              <span class="he-val">台東市中興路一段225號 ｜ <strong>8.9 分</strong> 超高評價</span>
+            </div>
+            <div class="he-row">
+              <span class="he-label">長住亮點</span>
+              <span class="he-val"><strong>🛗 有電梯</strong>、含早餐、<strong>房內專屬洗衣機</strong>與<strong>免治馬桶</strong></span>
+            </div>
+            <div class="he-row">
+              <span class="he-label">房型與取消</span>
+              <span class="he-val">雙人房 15㎡（有陽台）｜<strong class="text-green">11/4 前可免費取消</strong></span>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <span class="finger-hint" style="left: 10px; top: -18px;">👉</span>
             <a class="btn-mag btn-primary-mag" href="https://www.booking.com/hotel/tw/siang-guest-house.zh-tw.html?checkin=2026-11-11&checkout=2026-11-18&group_adults=2&no_rooms=1" target="_blank" rel="noopener noreferrer">
-              🏨 Booking 訂房
+              Booking 訂房頁
             </a>
             <a class="btn-mag btn-outline-mag" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E4%B8%AD%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5225%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">
               🚶 步行路線
@@ -256,48 +313,63 @@
       </section>
 
       <!-- ==========================================
-           SLIDE 6: KINDNESS HOTEL (康橋大飯店 台東館)
+           PAGE 06: 康橋大飯店 台東館 (KINDNESS HOTEL)
            ========================================== -->
       <section class="slide" data-page="6">
         <div class="inner">
-          <div class="mag-category">BACKUP SELECTION 01</div>
-          <h2 class="mag-title">康橋大飯店 台東館</h2>
-          <div class="mag-subtitle">步行到牙醫 800 公尺｜散步約 11 分鐘</div>
-
-          <div class="tags-row">
-            <span class="tag-pill">📋 品牌備案</span>
-            <span class="tag-pill">🛗 有電梯</span>
-            <span class="tag-pill">🥞 豐盛早餐</span>
-            <span class="tag-pill">🍜 宵夜點心供應</span>
+          <div class="page-masthead">
+            <span>BACKUP SELECTION 01 · 品牌備案</span>
+            <span class="folio-num">P. 06</span>
           </div>
 
-          <div class="mag-card">
-            <div class="info-row">
-              <span class="info-tag">地址</span>
-              <span class="info-val">台東市中興路一段209巷16號</span>
+          <div class="hotel-photo-grid">
+            <div class="photo-cell photo-main">
+              <img src="img/hotels/kindness/room.webp" alt="康橋大飯店台東館舒適四人間" class="editorial-img">
+              <span class="photo-role-tag">舒適四人間 26㎡</span>
+              <span class="photo-credit">照片來源：Booking.com／業者</span>
             </div>
-            <div class="info-row">
-              <span class="info-tag">電話諮詢</span>
-              <span class="info-val"><a href="tel:089-229226" style="color: var(--primary); font-weight: 700;">089-229226</a></span>
+            <div class="photo-cell photo-sub1">
+              <img src="img/hotels/kindness/exterior.webp" alt="康橋大飯店台東館外觀" class="editorial-img">
+              <span class="photo-role-tag">建築外觀</span>
+              <span class="photo-credit">照片來源：Booking.com／業者</span>
             </div>
-            <div class="info-row">
-              <span class="info-tag">房型規格</span>
-              <span class="info-val">舒適四人間 26㎡（2張雙人床）</span>
-            </div>
-            <div class="info-row">
-              <span class="info-tag">7 晚總價</span>
-              <span class="info-val price-val">TWD 38,790</span>
-            </div>
-            <div class="info-row">
-              <span class="info-tag">取消與付款</span>
-              <span class="info-val" style="color: #047857; font-weight: 700;">11/9 前免費取消・入住付款</span>
+            <div class="photo-cell photo-sub2">
+              <img src="img/hotels/kindness/bathroom.webp" alt="康橋大飯店台東館浴室" class="editorial-img">
+              <span class="photo-role-tag">衛浴空間</span>
+              <span class="photo-credit">照片來源：Booking.com／業者</span>
             </div>
           </div>
 
-          <div class="action-row" style="position: relative;">
-            <span class="finger-hint" style="left: -14px; top: 8px;">👉</span>
+          <div class="hotel-title-bar">
+            <div>
+              <h2 class="mag-serif-title">康橋大飯店 台東館</h2>
+              <div class="hotel-distance">🚶 步行到牙醫：<strong>800 公尺｜約 11 分鐘</strong></div>
+            </div>
+            <div class="hotel-price-box">
+              <span class="price-caption">7 晚總價（含早餐）</span>
+              <span class="price-amount">TWD 38,790</span>
+            </div>
+          </div>
+
+          <div class="hotel-editorial-table">
+            <div class="he-row">
+              <span class="he-label">地址與電話</span>
+              <span class="he-val">台東市中興路一段209巷16號 ｜ 電話 <a href="tel:089-229226" class="tel-link">089-229226</a></span>
+            </div>
+            <div class="he-row">
+              <span class="he-label">設施與房型</span>
+              <span class="he-val"><strong>🛗 有電梯</strong>、含豐盛早餐｜舒適四人間（2張雙人床，26㎡，城市景觀）</span>
+            </div>
+            <div class="he-row">
+              <span class="he-label">取消與付款</span>
+              <span class="he-val"><strong class="text-green">11/9 前可免費取消</strong>，入住時付款</span>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <span class="finger-hint" style="left: 10px; top: -18px;">👉</span>
             <a class="btn-mag btn-primary-mag" href="https://www.booking.com/hotel/tw/kindness-hotel-taidong.zh-tw.html?checkin=2026-11-11&checkout=2026-11-18&group_adults=2&no_rooms=1" target="_blank" rel="noopener noreferrer">
-              🏨 Booking 訂房
+              Booking 訂房頁
             </a>
             <a class="btn-mag btn-outline-mag" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E4%B8%AD%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5209%E5%B7%B716%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">
               🚶 步行路線
@@ -307,48 +379,63 @@
       </section>
 
       <!-- ==========================================
-           SLIDE 7: SUMMER OF MOONLIGHT (月光夏民宿)
+           PAGE 07: 月光夏民宿 (SUMMER OF MOONLIGHT)
            ========================================== -->
       <section class="slide" data-page="7">
         <div class="inner">
-          <div class="mag-category">BACKUP SELECTION 02</div>
-          <h2 class="mag-title">月光夏民宿</h2>
-          <div class="mag-subtitle">車程約 5 分鐘｜一樓客房免爬樓梯</div>
-
-          <div class="tags-row">
-            <span class="tag-pill">📋 舒適備案</span>
-            <span class="tag-pill">🚪 一樓免爬梯</span>
-            <span class="tag-pill">🌿 獨立陽台</span>
-            <span class="tag-pill">🚐 車站機場免費接送</span>
+          <div class="page-masthead">
+            <span>BACKUP SELECTION 02 · 庭園備案</span>
+            <span class="folio-num">P. 07</span>
           </div>
 
-          <div class="mag-card">
-            <div class="info-row">
-              <span class="info-tag">地址</span>
-              <span class="info-val">台東市馬亨亨大道625號</span>
+          <div class="hotel-photo-grid">
+            <div class="photo-cell photo-main">
+              <img src="img/hotels/moonlight/room.webp" alt="月光夏民宿雙人房" class="editorial-img">
+              <span class="photo-role-tag">一樓雙人房 23㎡</span>
+              <span class="photo-credit">照片來源：Booking.com／業者</span>
             </div>
-            <div class="info-row">
-              <span class="info-tag">電話諮詢</span>
-              <span class="info-val"><a href="tel:089-219168" style="color: var(--primary); font-weight: 700;">089-219168</a></span>
+            <div class="photo-cell photo-sub1">
+              <img src="img/hotels/moonlight/exterior.webp" alt="月光夏民宿外觀與庭園" class="editorial-img">
+              <span class="photo-role-tag">建築外觀與庭園</span>
+              <span class="photo-credit">照片來源：Booking.com／業者</span>
             </div>
-            <div class="info-row">
-              <span class="info-tag">房型規格</span>
-              <span class="info-val">雙人房 23㎡（附陽台）</span>
-            </div>
-            <div class="info-row">
-              <span class="info-tag">7 晚總價</span>
-              <span class="info-val price-val">TWD 25,945</span>
-            </div>
-            <div class="info-row">
-              <span class="info-tag">取消政策</span>
-              <span class="info-val" style="color: #047857; font-weight: 700;">11/4 前免費取消</span>
+            <div class="photo-cell photo-sub2">
+              <img src="img/hotels/moonlight/bathroom.webp" alt="月光夏民宿衛浴" class="editorial-img">
+              <span class="photo-role-tag">乾濕分離衛浴</span>
+              <span class="photo-credit">照片來源：Booking.com／業者</span>
             </div>
           </div>
 
-          <div class="action-row" style="position: relative;">
-            <span class="finger-hint" style="left: -14px; top: 8px;">👉</span>
+          <div class="hotel-title-bar">
+            <div>
+              <h2 class="mag-serif-title">月光夏民宿</h2>
+              <div class="hotel-distance">🚶 步行 <strong>1.9 公里（約 27 分）</strong>｜車程約 5 分</div>
+            </div>
+            <div class="hotel-price-box">
+              <span class="price-caption">7 晚總價（含早 27,310）</span>
+              <span class="price-amount">TWD 25,945</span>
+            </div>
+          </div>
+
+          <div class="hotel-editorial-table">
+            <div class="he-row">
+              <span class="he-label">地址與電話</span>
+              <span class="he-val">台東市馬亨亨大道625號 ｜ 電話 <a href="tel:089-219168" class="tel-link">089-219168</a></span>
+            </div>
+            <div class="he-row">
+              <span class="he-label">設施與服務</span>
+              <span class="he-val">無電梯但<strong>房間在一樓免爬梯</strong>、有陽台、<strong>車站與機場接送</strong></span>
+            </div>
+            <div class="he-row">
+              <span class="he-label">取消與提醒</span>
+              <span class="he-val"><strong class="text-green">11/4 前免費取消</strong>｜<span class="text-warn">⚠️ 請先確認 10% 服務費是否已含在總價</span></span>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <span class="finger-hint" style="left: 10px; top: -18px;">👉</span>
             <a class="btn-mag btn-primary-mag" href="https://www.booking.com/hotel/tw/summer-of-moonlight-homestay.zh-tw.html?checkin=2026-11-11&checkout=2026-11-18&group_adults=2&no_rooms=1" target="_blank" rel="noopener noreferrer">
-              🏨 Booking 訂房
+              Booking 訂房頁
             </a>
             <a class="btn-mag btn-outline-mag" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E6%9D%B1%E5%B8%82%E9%A6%AC%E4%BA%A8%E4%BA%A8%E5%A4%A7%E9%81%93625%E8%99%9F&destination=22.766940279683972,121.13652461835369&travelmode=walking" target="_blank" rel="noopener noreferrer">
               🚶 步行路線
@@ -358,65 +445,123 @@
       </section>
 
       <!-- ==========================================
-           SLIDE 8: BOOKING TIPS
+           PAGE 08: BOOKING TIPS (行前訂房叮嚀)
            ========================================== -->
       <section class="slide" data-page="8">
         <div class="inner">
-          <div class="mag-category">EDITOR'S CHECKLIST</div>
-          <h2 class="mag-title">行前訂房叮嚀</h2>
-          <div class="mag-subtitle">主編整理的 6 大安心守則</div>
+          <div class="page-masthead">
+            <span>EDITOR'S NOTE · 訂房與休養指南</span>
+            <span class="folio-num">P. 08</span>
+          </div>
 
-          <ul class="tips-list">
-            <li class="tip-item">
-              <span class="tip-icon">🪟</span>
-              <div><strong>確認對外窗：</strong>訂房前請務必致電業者確認房型具備良好對外採光通風窗。</div>
-            </li>
-            <li class="tip-item">
-              <span class="tip-icon">⏰</span>
-              <div><strong>早點預訂：</strong>十一月為熱門季節，優質房況隨時可能售罄，建議提早預訂。</div>
-            </li>
-            <li class="tip-item">
-              <span class="tip-icon">🏷️</span>
-              <div><strong>長住特惠：</strong>連續入住七晚，可事先致電向旅宿洽詢是否有專屬長住折扣。</div>
-            </li>
-            <li class="tip-item">
-              <span class="tip-icon">🛡️</span>
-              <div><strong>彈性取消：</strong>優先挑選具備彈性免費取消之方案，行程更有保障。</div>
-            </li>
-            <li class="tip-item">
-              <span class="tip-icon">✈️</span>
-              <div><strong>提早入住：</strong>自瑞士返台若受時差影響，可事先詢問能否提早進房休息。</div>
-            </li>
-            <li class="tip-item">
-              <span class="tip-icon">🧊</span>
-              <div><strong>房內冰箱：</strong>確認房間配有冰箱，便於看牙療程結束後進行冰敷與保冷。</div>
-            </li>
-          </ul>
+          <div class="diptych-photo-row">
+            <div class="diptych-cell">
+              <img src="img/editorial_cozy_room.webp" alt="陽光灑落的溫馨休養房間意象" class="editorial-img">
+            </div>
+            <div class="diptych-cell">
+              <img src="img/editorial_breakfast.webp" alt="溫馨晨間早餐意象" class="editorial-img">
+            </div>
+          </div>
+
+          <div class="editorial-header compact-header">
+            <div class="mag-kicker">ESSENTIAL CHECKLIST</div>
+            <h2 class="mag-serif-title">行前訂房 6 大叮嚀</h2>
+          </div>
+
+          <div class="tips-editorial-grid">
+            <div class="tip-card">
+              <span class="tip-num">01</span>
+              <div class="tip-text"><strong>確認對外窗：</strong>訂房前請先打電話向業者確認房間是否有窗戶。</div>
+            </div>
+            <div class="tip-card">
+              <span class="tip-num">02</span>
+              <div class="tip-text"><strong>早點預訂：</strong>十一月空房隨時會被訂走，建議儘早預訂。</div>
+            </div>
+            <div class="tip-card">
+              <span class="tip-num">03</span>
+              <div class="tip-text"><strong>詢問長住優惠：</strong>連住 7 晚可先打電話詢問是否有長住優惠。</div>
+            </div>
+            <div class="tip-card">
+              <span class="tip-num">04</span>
+              <div class="tip-text"><strong>彈性取消：</strong>優先選擇可以免費取消的訂房方案。</div>
+            </div>
+            <div class="tip-card">
+              <span class="tip-num">05</span>
+              <div class="tip-text"><strong>提早入住：</strong>從瑞士回來有時差，可先詢問能否提早入住。</div>
+            </div>
+            <div class="tip-card">
+              <span class="tip-num">06</span>
+              <div class="tip-text"><strong>房間冰箱：</strong>確認房內有冰箱，看完牙可以方便冰敷休養。</div>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- ==========================================
-           SLIDE 9: BACK COVER
+           PAGE 09: TAITUNG SLOW LIVING (台東山海・慢活休養手札)
            ========================================== -->
       <section class="slide" data-page="9">
-        <div class="inner cover-hero">
-          <div class="cover-badge">專刊封底・鳴謝閱讀</div>
-          <h2 class="cover-title" style="font-size: 28px;">台東看牙住宿推薦</h2>
-          <div class="cover-dates">2026/11/11 – 11/18（7晚）</div>
-
-          <div class="cover-intro-box" style="text-align: center; font-size: 17px; line-height: 1.6;">
-            本專刊所有價格與空房狀況為 <strong>2026/10/17 01:08（台灣時間）</strong>於 Booking.com 查詢之結果，實際房況以訂房當下為準。
-            <div style="margin-top: 10px; color: var(--primary); font-weight: 700;">
-              🌿 祝您看牙順利・台東居遊平安舒心！
-            </div>
+        <div class="inner">
+          <div class="page-masthead">
+            <span>TAITUNG SLOW LIVING · 山海療癒手札</span>
+            <span class="folio-num">P. 09</span>
           </div>
 
-          <div style="display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 14px;">
-            <button class="btn-mag btn-primary-mag btn-restart" style="min-height: 52px; font-size: 19px;">
-              ⟲ 從頭重新閱讀專刊
+          <div class="hero-photo-frame tall-hero">
+            <img src="img/taitung_hot_air_balloon.webp" alt="台東鹿野高台與縱谷晨霧熱氣球" class="editorial-img">
+            <span class="photo-tag-badge">🌿 東台灣秋季慢旅</span>
+          </div>
+
+          <div class="editorial-header">
+            <div class="mag-kicker">AUTUMN IN TAITUNG</div>
+            <h2 class="mag-serif-title">山海之間・靜心休養</h2>
+            <div class="mag-serif-sub">十一月微涼秋風，最適合放慢步調的療癒時節</div>
+          </div>
+
+          <div class="editorial-columns">
+            <div class="col-item">
+              <span class="col-label">縱谷與太平洋</span>
+              <span class="col-value">秋季的台東褪去盛夏暑氣，清晨有溫潤海風與山嵐，散步往返診所格外舒心。</span>
+            </div>
+            <div class="col-item">
+              <span class="col-label">溫軟飲食建議</span>
+              <span class="col-value">看牙期間推薦品嚐在地溫熱豆漿、清燉鮮魚湯與軟綿米食，營養充足且不傷牙齦。</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           PAGE 10: BACK COVER (專刊封底・太平洋晨光)
+           ========================================== -->
+      <section class="slide" data-page="10">
+        <div class="inner">
+          <div class="page-masthead">
+            <span>COLOPHON &amp; BACK COVER · 專刊封底</span>
+            <span class="folio-num">P. 10</span>
+          </div>
+
+          <div class="hero-photo-frame">
+            <img src="img/pacific_dawn.webp" alt="台東太平洋晨光與海浪" class="editorial-img">
+            <span class="photo-tag-badge">🌅 太平洋的溫柔晨曦</span>
+          </div>
+
+          <div class="editorial-header">
+            <div class="mag-kicker">TAITUNG DENTAL STAY EDITION</div>
+            <h2 class="mag-serif-title">祝您看牙順利・旅途平安</h2>
+            <div class="mag-serif-sub">2026/11/11（三）– 11/18（三）共 7 晚</div>
+          </div>
+
+          <div class="colophon-box">
+            價格與空房為 <strong>2026/10/17 01:08（台灣時間）</strong>在 Booking.com 查詢的結果，實際以訂房時為準。
+          </div>
+
+          <div class="action-row">
+            <button class="btn-mag btn-primary-mag btn-restart">
+              ⟲ 重新閱讀專刊
             </button>
-            <a class="btn-mag btn-outline-mag" href="../index.html" style="min-height: 52px; font-size: 18px;">
-              🏠 返回原本清單總覽頁
+            <a class="btn-mag btn-outline-mag" href="../index.html">
+              🏠 返回原本清單頁
             </a>
           </div>
         </div>
@@ -424,25 +569,23 @@
 
     </main>
 
-    <!-- Bottombar Navigation -->
+    <!-- Bottombar Navigation & Folded Page-Curl -->
     <footer class="bottombar">
-      <!-- Back Arrow -->
       <button id="btnBack" class="nav-back-btn" aria-label="上一頁">‹</button>
 
-      <!-- Center Dots Indicator -->
       <div id="dots" class="dots-container">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+        <span class="dot" data-index="4"></span>
+        <span class="dot" data-index="5"></span>
+        <span class="dot" data-index="6"></span>
+        <span class="dot" data-index="7"></span>
+        <span class="dot" data-index="8"></span>
+        <span class="dot" data-index="9"></span>
       </div>
 
-      <!-- Page Curl Corner Button (Next page) -->
       <button id="pageCurl" class="page-curl" aria-label="翻到下一頁">
         <div class="curl-triangle"></div>
         <span class="curl-text">翻頁 ›</span>
@@ -450,6 +593,6 @@
     </footer>
   </div>
 
-  <script src="js/magazine.js?v=20261017_1200"></script>
+  <script src="js/magazine.js?v=20261017_1415"></script>
 </body>
 </html>
