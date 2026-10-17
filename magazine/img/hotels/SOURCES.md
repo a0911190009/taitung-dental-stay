@@ -25,8 +25,8 @@
 - **Booking.com 住宿頁面**：https://www.booking.com/hotel/tw/siang-guest-house.zh-tw.html
 - **`exterior.webp`**（建築外觀｜尺寸 `1024×768`）：
   - 來源圖片網址：`https://cf.bstatic.com/xdata/images/hotel/max1024x768/282545921.jpg?k=1d90523c563d9c117ae2d4f7b7f3bc2ef2d0a107844b852ac6028e1e97f3520a&o=&hp=1`
-- **`room.webp`**（推薦房型（雙人房 15㎡ 附陽台）｜尺寸 `1024×683`）：
-  - 來源圖片網址：`https://cf.bstatic.com/xdata/images/hotel/max1024x768/282549150.jpg?k=1e95c385418c4f168d0a9ec8f7d66f45ecef434a8da08e8dd39d3b67d281b2f0&o=`
+- **`room.webp`**（推薦房型（特大雙人床房 14㎡・1張特大雙人床・TWD 16,092）｜尺寸 `1600×1067`）：
+  - 來源圖片網址：`https://cf.bstatic.com/xdata/images/hotel/max1600x1200/282549150.jpg?k=2e0a9b450285d264ddc499fc31d2ebf7ab6d1a092acb765aceff0a91ca46f238&o=`
 - **`bathroom.webp`**（房內衛浴空間｜尺寸 `512×768`）：
   - 來源圖片網址：`https://cf.bstatic.com/xdata/images/hotel/max1024x768/282549180.jpg?k=6e52eaa37a8af7ba49feaef77d025bda1a5e5a2c9a50d717ec6b0262cb47ebdd&o=`
 
