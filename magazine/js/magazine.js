@@ -11,7 +11,7 @@
 (function () {
   'use strict';
 
-  const VERSION = '20261017_1415';
+  const VERSION = '20261017_1429';
   const TOTAL_PAGES = 10;
 
   // currentIndex is 0..9. On desktop spread mode (>=1024px), spreadLeftIndex is always even (0, 2, 4, 6, 8)
